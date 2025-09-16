@@ -23,3 +23,22 @@ rate: 5%
 10 years
 final balance: 1320.68
 """
+def main():
+    p=float(input("Enter the annual investment amount: "))
+    rate_percentage=float(input("Enter the percentage of annual interest rate: "))
+    r=rate_percentage/100
+    t=int(input("Enter the number of years: "))
+    balance=0.0
+    year=1
+
+    while year <=t:
+        year+=1
+        balance+=p
+        balance*=(1+r)
+        balance=round(balance,2)
+
+    balance=balance    
+    print(f"After {t} years, the final balance will be {balance}")
+
+if __name__ =="__main__":
+  main()
