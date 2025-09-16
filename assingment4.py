@@ -23,3 +23,24 @@ How many months will it take him to pay off the car.  How much interest has he p
 He will have paid 21711.60 in interest
 """
 
+
+initial_debt=float(input("Enter initial debt amount:$ "))
+monthly_interest_rate=float(input("Enter the monthly interest rate in %: "))
+monthly_payment=float(input("Enter the monthly payment:$ "))
+monthly_interest_rate /=100
+
+debt=initial_debt
+months=0
+total_interest=0.0
+
+while debt>0:
+    interest=debt*monthly_interest_rate
+    debt+=interest
+    total_interest+=interest
+    debt-=monthly_payment
+    months+=1
+
+total_interest=round(total_interest,2)
+if debt <=0:
+    print(f"It will take {months} months to repay the debt.")
+    print(f"Total interest paid: ${total_interest}")
